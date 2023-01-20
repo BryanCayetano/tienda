@@ -15,15 +15,17 @@ return new class extends Migration
     {
         Schema::create('carrito', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('users');
+            $table->unsignedBigInteger('id_producto');
             $table->foreign('id_producto')->references('id')->on('productos');
+            $table->unsignedBigInteger('id_categoria');
             $table->foreign('id_categoria')->references('id')->on('categoria');
             $table->string('nombre_producto');
             $table->string('nombre_categoria');
             $table->integer('precio');
             $table->string('descripcion');
-            $table->integer('stock')->default(0);
-            $table->unsignedBigInteger('id_categoria');
+            $table->integer('stock');
             $table->timestamps();
         });
         
@@ -37,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('carrito');
     }
 };

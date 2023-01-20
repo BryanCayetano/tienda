@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("descripcion");
             $table->integer("stock")->default(0);
             $table->unsignedBigInteger('id_categoria');
-            $table->foreign('category_id')->references('id_categoria')->on('categoria');
+            $table->foreign('id_categoria')->references('id_categoria')->on('categoria');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('productos');
     }
 };
