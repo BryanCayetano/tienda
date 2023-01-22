@@ -10,13 +10,13 @@ class carritoController extends Controller
     {
         $products = productosModel::all();
         dd($products);
-        return view('shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products' => $products]);
+        return view('shop')->withTitle('TIENDA')->with(['productos' => $products]);
     }
 
     public function cart()  {
         $cartCollection = carritoController::getContent();
         dd($cartCollection);
-        return view('cart')->withTitle('E-COMMERCE STORE | CART')->with(['cartCollection' => $cartCollection]);;
+        return view('cart')->withTitle('TIENDA')->with(['carrito' => $cartCollection]);;
     }
 
 }
