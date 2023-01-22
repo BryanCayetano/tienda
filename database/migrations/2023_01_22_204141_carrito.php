@@ -28,8 +28,6 @@ return new class extends Migration
             $table->integer('stock');
             $table->timestamps();
         });
-        
-
     }
 
     /**
@@ -39,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carrito');
+        //
     }
 };

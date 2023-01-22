@@ -16,7 +16,7 @@ class productosModel extends Model
         'precio',
         'descripcion',
         'stock',
-        'id_categoria'
+        'nombre_categoria'
     ];
 
 }

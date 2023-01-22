@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer("precio");
             $table->string("descripcion");
             $table->integer("stock")->default(0);
-            $table->unsignedBigInteger('id_categoria');
-            $table->foreign('id_categoria')->references('id_categoria')->on('categoria');
+            $table->string('nombre_categoria');
+            $table->foreign('nombre_categoria')->references('nombre')->on('categoria');
             $table->timestamps();
         });
     }
